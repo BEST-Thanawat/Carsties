@@ -1,0 +1,21 @@
+--------------------------------------------------First time run
+Go run dotnet watch in AuctionService and IdentityService first
+If docker compose is running then stop SearchService
+PostgreSQL and MongoDB containers must be running before run dotnet watch
+dotnet watch at C:\Coding\Carsties\SearchService>
+(This will generate data from PostgreSQL into MongoDB file system)
+
+--------------------------------------------------MongoDB with https://studio3t.com/
+mongodb://root:mongopw@localhost:27017/?authSource=admin
+
+--------------------------------------------------Git
+Run at C:\Coding\Carsties>
+
+git add .
+git commit -m "End of section 4"
+git push -u origin main
+
+ 
+--------------------------------------------------Docker Build from dockerfile and docker compose
+docker compose build search-svc (After created dockerfile and dockercompose then run this command to build image)
+docker compose up -d (To create and add search-svc into container on docker)

@@ -1,0 +1,14 @@
+------------------------------------------First time run
+If docker compose is running then stop IdentityService
+PostgreSQL and MongoDB containers must be running before run dotnet watch
+dotnet watch at C:\Coding\Carsties\IdentityService>
+(This will generate DB and data into PostgreSQL)
+then goto AuctionService and SearchService
+
+--------------------------------------------------Migration
+dotnet ef migrations add "InitialCreate" -o Data/Migrations
+
+--------------------------------------------------Docker Build from dockerfile and docker compose
+docker compose build identity-svc (After created dockerfile and dockercompose then run this command to build image)
+docker compose up -d (To create and add search-svc into container on docker)
+

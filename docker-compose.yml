@@ -84,6 +84,20 @@ services:
       - mongodb
       - rabbitmq
 
+  notificationservice:
+    image: ${DOCKER_REGISTRY-}notificationservice
+    build:
+      context: .
+      dockerfile: NotificationService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - RabbitMq__Host=rabbitmq
+    ports:
+      - 7004:80
+    depends_on:
+      - rabbitmq
+
   postgres:
     image: postgres
     environment:
@@ -118,4 +132,5 @@ services:
 volumes:
     pgdata:
     mongodata:
+
 

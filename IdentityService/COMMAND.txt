@@ -9,6 +9,9 @@ then goto AuctionService and SearchService
 dotnet ef migrations add "InitialCreate" -o Data/Migrations
 
 --------------------------------------------------Docker Build from dockerfile and docker compose
-docker compose build identity-svc (After created dockerfile and dockercompose then run this command to build image)
-docker compose up -d (To create and add search-svc into container on docker)
+docker compose build identityservice (After created dockerfile and dockercompose then run this command to build image)
+docker compose -p carsties up -d (To create and add search-svc into container on docker)
 
+*After edit the service we have to run
+docker compose build identityservice
+docker compose -p carsties up -d

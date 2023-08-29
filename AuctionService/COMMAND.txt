@@ -22,11 +22,14 @@ dotnet ef migrations remove -p Infrastructure -s API -c StoreContext
 --------------------------------------------------Docker
  C:\Coding\Carsties> docker compose -p carsties up -d
  
+ *Clear all db and data
+ docker compose down
 --------------------------------------------------Docker Build from dockerfile and docker compose
 docker compose build auction-svc (After created dockerfile and dockercompose then run this command to build image)
 docker compose up -d (To create and add search-svc into container on docker)
 
 --------------------------------------------------Git
+//First time commit
 git config --global user.email "thanawat.sukwibul@gmail.com"
 git config --global user.name "BEST-Thanawat"
 git init
@@ -39,9 +42,17 @@ git branch -M main
 git remote add origin https://github.com/BEST-Thanawat/Carsties.git
 git push -u origin main
 
+//Second time+ 
 git add .
 git commit -m "End of section 5"
 git push -u origin main
 
 --------------------------------------------------MongoDB with https://studio3t.com/
 mongodb://root:mongopw@localhost:27017/?authSource=admin
+
+
+--------------------------------------------------Error
+if see this error "column MessageType of relation OutboxMessage does not exist"
+change these two lines below
+<PackageReference Include="MassTransit.EntityFrameworkCore" Version="8.0.16" />
+<PackageReference Include="MassTransit.RabbitMQ" Version="8.0.16" />
